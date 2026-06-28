@@ -41,8 +41,8 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'relative flex flex-col border-r border-border bg-bg transition-all duration-300',
-        sidebarOpen ? 'w-64' : 'w-16'
+        'relative flex h-full shrink-0 overflow-hidden flex-col border-r border-border bg-bg transition-all duration-300 max-md:absolute max-md:z-50',
+        sidebarOpen ? 'w-64 max-md:translate-x-0' : 'w-16 max-md:-translate-x-full'
       )}
     >
       <div className="flex h-14 items-center justify-between border-b border-border px-4">
@@ -115,7 +115,7 @@ export function Sidebar() {
         </div>
       </div>
 
-      <div className="border-t border-border p-4">
+      <div className="hidden border-t border-border p-4 md:block">
         <button
           onClick={toggleSidebar}
           className="flex w-full items-center justify-center rounded-md p-2 text-text2 hover:bg-bg2 hover:text-text transition-colors"

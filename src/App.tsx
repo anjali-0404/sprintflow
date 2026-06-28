@@ -20,6 +20,16 @@ const ContactPage = lazy(() => import('@/pages/landing/ContactPage').then(m => (
 const Login = lazy(() => import('@/pages/auth/Login').then(module => ({ default: module.Login })));
 const Signup = lazy(() => import('@/pages/auth/Signup').then(module => ({ default: module.Signup })));
 const Dashboard = lazy(() => import('@/pages/Dashboard').then(module => ({ default: module.Dashboard })));
+const Projects = lazy(() => import('@/pages/dashboard/Projects').then(module => ({ default: module.Projects })));
+const Roadmap = lazy(() => import('@/pages/dashboard/Roadmap').then(module => ({ default: module.Roadmap })));
+const Analytics = lazy(() => import('@/pages/dashboard/Analytics').then(module => ({ default: module.Analytics })));
+const AIAssistant = lazy(() => import('@/pages/dashboard/AIAssistant').then(module => ({ default: module.AIAssistant })));
+const Meetings = lazy(() => import('@/pages/dashboard/Meetings').then(module => ({ default: module.Meetings })));
+const Calendar = lazy(() => import('@/pages/dashboard/Calendar').then(module => ({ default: module.Calendar })));
+const Notifications = lazy(() => import('@/pages/dashboard/Notifications').then(module => ({ default: module.Notifications })));
+const Team = lazy(() => import('@/pages/dashboard/Team').then(module => ({ default: module.Team })));
+const Settings = lazy(() => import('@/pages/dashboard/Settings').then(module => ({ default: module.Settings })));
+const DashboardPlaceholder = lazy(() => import('@/pages/DashboardPlaceholder').then(module => ({ default: module.DashboardPlaceholder })));
 
 // Loading component
 const PageLoader = () => (
@@ -68,8 +78,16 @@ export default function App() {
           {/* Dashboard Routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
-            {/* Add more dashboard routes as needed */}
-            <Route path="*" element={<div className="p-8 text-center text-text2">Page under construction</div>} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="roadmap" element={<Roadmap />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="ai" element={<AIAssistant />} />
+            <Route path="meetings" element={<Meetings />} />
+            <Route path="calendar" element={<Calendar />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="team" element={<Team />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="*" element={<DashboardPlaceholder />} />
           </Route>
 
           {/* 404 Route */}

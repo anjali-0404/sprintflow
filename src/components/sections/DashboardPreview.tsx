@@ -24,7 +24,7 @@ export function DashboardPreview() {
               <div className="ml-3 text-xs text-text3">app.sprintflow.ai/dashboard</div>
             </div>
             
-            <div className="grid min-h-[360px] grid-cols-[200px_1fr]">
+            <div className="grid min-h-[360px] grid-cols-1 md:grid-cols-[200px_1fr]">
               <div className="hidden border-r border-border bg-bg p-3 md:block">
                 <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-widest text-text3">Workspace</div>
                 <div className="mb-1 flex cursor-pointer items-center gap-2 rounded-md bg-accent-light px-2 py-1.5 text-[13px] font-medium text-accent">
