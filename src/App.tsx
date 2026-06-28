@@ -4,6 +4,8 @@ import { useUiStore } from '@/store/uiStore';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { LandingLayout } from '@/components/layout/LandingLayout';
 
+import ScrollToTop from '@/components/ScrollToTop';
+
 // Lazy load pages for performance
 const Landing = lazy(() => import('@/pages/Landing').then(module => ({ default: module.Landing })));
 const FeaturesPage = lazy(() => import('@/pages/landing/FeaturesPage').then(m => ({ default: m.FeaturesPage })));
@@ -40,6 +42,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Landing pages with shared Navbar + Footer layout */}
